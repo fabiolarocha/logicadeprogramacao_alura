@@ -1,0 +1,57 @@
+<meta charset="UTF-8"> <!--Decodificação de Caracteres caso tenha nescessidade-->
+<center> <!--Inicio da Centralização de tudo na pagina-->
+<h3>Blitz da CNH Operação Águia</h3> <!-- Titulo -->
+
+<!--Width Largura da Imagem Height Altura da Imagem -->
+   <img width="400" height="300" src="https://t4.ftcdn.net/jpg/02/99/84/19/240_F_299841921_sgND6Ym290p9PjewsdUQewTWikiurWxZ.jpg"> <!--Link de uma imagem externa-->
+
+   <br> <!--Pula Linha-->
+
+<!--Inicio do código javascript-->
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+         pulaLinha();
+    }
+
+    var nome = prompt("Qual é seu nome ?")
+        idade = parseInt(prompt("Qual é sua idade?"));
+        tenhoCarteira = prompt("Tem carteira? Responda sim ou nao");
+
+         pulaLinha(); // pula linha
+
+      // aqui concateno as palavras como resultado da verificação
+         mostra("<b>" +nome + "</b>, voce tem <b>" + idade + "</b> Anos ");
+          pulaLinha();
+
+      // aqui verifica se é maior de 18 anos e libero ou nao para dirigir se tiver habilitação  
+    if(tenhoCarteira == "nao" ){
+        mostra("Não pode dirigir sem Habilitação com <b>" + idade + "</b> de acordo com a lei já é possivél tirar a Primeira Habilitação procure uma autoescola");
+                 mostra("<img src=https://t4.ftcdn.net/jpg/04/51/51/55/240_F_451515562_yEImOgrYOsrCVltiEuo2trNEz3g5pwXs.jpg>"+""); 
+      } else { 
+    if(idade >= 18) {
+        mostra("<b>"+ nome + "</b>,com <b> " + idade + "</b> Anos com Habilitação Pode dirigir.!");
+        mostra("<img src=https://t3.ftcdn.net/jpg/00/31/39/64/240_F_31396472_daI7fkY8S1W5r3ZZZKfuhNoXBVBZrTaL.jpg>"+"");
+
+    } else {
+     // se não, as afirmações acima nao estiverem de acordo com as reposta possitiva aqui pula para o bloco abaixo
+        // mostra que com a idade e sem habilitação nao pode dirigir
+       mostra(" Não Pode Dirigir com <b>" + idade + "</b> Anos e sem Habilitação"); 
+      // verifico se tem carteira não se não tiver é mostrado o pega na mentira
+     if(tenhoCarteira == "sim" ){
+       mostra("<b>"+nome +"</b> você mentiu dizendo que tem carteira pois com a idade de <b>" +
+        idade + "</b> não é possivel tirar habilitação com essa idade aguarde completar 18 Anos e procure uma auto escola"); 
+       mostra("<img src=https://t4.ftcdn.net/jpg/04/49/22/15/240_F_449221570_1Gr44IkR7xXopSkQX6RHYxMLYtYIQlzg.jpg>"+"");
+       } else {
+        mostra(" Não Pode Dirigir com <b> " + idade + "</b> Anos e sem Habilitação aguarde completar 18 Anos");
+        }
+      }
+    }
+
+
+</script>
+</center>
