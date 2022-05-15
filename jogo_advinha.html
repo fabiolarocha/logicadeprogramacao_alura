@@ -1,120 +1,58 @@
-<meta charset="utf-8">
-
+<meta charset="UTF-8">
 <script>
 
     function pulaLinha() {
         document.write("<br>");
-        document.write("<br>");
-
     }
 
-    function mostra(texto) {
-        document.write(texto);
+    function mostra(frase) {
+        document.write(frase);
         pulaLinha();
-
     }
 
-    var qualAPergunta = Math.round(Math.random () * 10)
-console.log
-    if(qualAPergunta==0) {
-        var pergunta = prompt("O que é que quanto mais tira maior fica?");
+// Criar função 'sorteia' onde seu valor (n) será definido baixo
+// O valor gerado será multiplicado pelo valor de (n)
 
-        if(pergunta == "buraco") {
-            mostra("voce acertou")
-        } else {
-            mostra("não foi dessa vez")
-            }
+    function sorteia (n) {
+        var numeroSorteado = Math.round(Math.random() * n);
+        return numeroSorteado
+    }
+
+// Inserindo nome + valor da função sorteia 
+
+    var nome = prompt("SEJA BEM VINDO AO JOGO! Informe o seu nome ");
+
+// Definindo valor de (n). Se (n) for 10 após a multiplicação o valor do número gerado irá variar de 0 a 10;
+// Definindo valor de (n). Se (n) for 100 após a multiplicação o valor do número gerado irá variar de 0 a 100;
+
+    var numeroPensado = sorteia(10);
+
+// Insira um número e tente acertar o valor gerado pelo sistema
+
+    var chute = parseInt(prompt("Olá, " + nome + "! O sistema irá gerar um número aleatório de 0 a 10. Vamos ver se você acerta. Qual o número que o sitema gerou?"));
+
+
+// Verificação do chute
+
+    if(chute == numeroPensado) {
+
+        mostra("PARABÉNS VOCÊ ACERTOU!!! O número gerado pelo sistema foi o " + numeroPensado + ".");
+
+    } else {
+
+        if (chute < numeroPensado) {
+            mostra(" ERROU. O seu número " + chute + " foi menor que o número gerado.");
+
+        } if (chute > numeroPensado) {
+            mostra("ERROU. O seu número " + chute + " foi maior que o número gerado.");
         }
-    if(qualAPergunta==1) {
-        var pergunta = prompt("Eu falo, mais não tenho boca. Eu ouço, mas não tenho ouvidos. não tenho corpo, mas vivo com o vento. Quem sou eu?");
-
-        if(pergunta == "eco") {
-            mostra("voce acertou")
-        } else {
-            mostra("não foi dessa vez")
-            }
 
     }
 
-     if(qualAPergunta==2) {
-        var pergunta = prompt("Eu sou algo que as pessoas amam ou odeiam. Eu mudo tanto a aparência das pessoas quanto seus pensamentos. Se uma pessoa cuida de si mesma, eu subo ainda mais. Eu engano algumas pessoas. E para outras, sou um verdadeiro mistério. Algumas pessoas bem que tentam me esconder, mas uma hora, inevitavelmente, eu apareço. Não importa o que as pessoas tentem, eu jamais cairei. Quem sou eu?");
+// Não mostrar número pensado caso você acerte o chute
 
-        if(pergunta == "idade") {
-            mostra("voce acertou")
-        } else {
-            mostra("não foi dessa vez")
-            }
+    if (chute != numeroPensado) {         
+        mostra("O número gerado pelo sistema foi o " + numeroPensado);
     }
-    if(qualAPergunta== 3) {
-        var pergunta = prompt("Tenho apenas uma cor, mas posso ter vários tamanhos. Estou presente quando faz sol. Na chuva, jamais! Passo todo o tempo no chão, mas nunca fico sujo. Não faço mal algum e não posso sentir dor. Quem sou eu?");
 
-        if(pergunta == "sombra") {
-            mostra("voce acertou")
-        } else {
-            mostra("não foi dessa vez")
-            }
-    }
-     if(qualAPergunta==4) {
-        var pergunta = prompt("Quanto mais souber de mim, menos você verá. Quem sou eu?");
-
-        if(pergunta == "escuridão") {
-            mostra("voce acertou")
-        } else {
-            mostra("não foi dessa vez")
-            }
-    }
-     if(qualAPergunta==5) {
-        var pergunta = prompt("Sou cheio de buracos, mas ainda assim consigo reter muita água. Quem sou eu?");
-
-        if(pergunta == "esponja") {
-            mostra("voce acertou")
-        } else {
-            mostra("não foi dessa vez")
-            }
-    }
-     if(qualAPergunta==6) {
-        var pergunta = prompt("Quando precisa de mim, você me atira para longe, até um lugar onde ninguém pode me ver. Mas quando já não precisa mais, você me traz de volta. Quem sou eu?");
-
-        if(pergunta == "âncora") {
-            mostra("voce acertou")
-        } else {
-            mostra("não foi dessa vez")
-            }
-    }
-     if(qualAPergunta==7) {
-        var pergunta = prompt("Nós podemos machucar sem fazer um único movimento. Podemos envenenar sem tocar. Carregamos a verdade e a mentira. E não devemos ser julgadas pelo nosso tamanho Quem somos nós?");
-
-        if(pergunta == "palavra") {
-            mostra("voce acertou")
-        } else {
-            mostra("não foi dessa vez")
-            }
-    }
-     if(qualAPergunta==8) {
-        var pergunta = prompt("Ponha os dedos nos meus olhos que eu abrirei as minhas potentes mandíbulas. E vou devorar tudo o que vier pela frente: roupas, penas, papéis. Quem sou eu?");
-
-        if(pergunta == "tesoura") {
-            mostra("voce acertou")
-        } else {
-            mostra("não foi dessa vez")
-            }
-    }
-     if(qualAPergunta==9) {
-        var pergunta = prompt("Eu posso guardar tudo dentro de mim. Tudo o que você pode imaginar: o vento, as florestas, o mundo, o universo e até Deus. Tudo o que vier à sua cabeça você pode encontrar dentro de mim. Quem sou eu?");
-
-        if(pergunta == "alfabeto") {
-            mostra("voce acertou")
-        } else {
-            mostra("não foi dessa vez")
-            }
-    }
-     if(qualAPergunta==10) {
-        var pergunta = prompt("muitos me temem, mas todos vem até mim, quem eu guardo nunca mais chora mas todos os outros sim. Quem sou eu?");
-
-        if(pergunta == "morte") {
-            mostra("voce acertou")
-        } else {
-            mostra("não foi dessa vez")
-            }
-    }
 </script>
