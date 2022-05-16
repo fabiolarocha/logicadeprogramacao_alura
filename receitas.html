@@ -1,0 +1,56 @@
+<meta charset="UTF-8">
+
+<h1></h1>
+<big><div id="rec"></div></big> <br>
+
+<script>
+    var ingredientes = [];
+    var quantidade = parseInt(prompt("Quantos ingredientes você vai adicionar?"));
+
+        if (isNaN(quantidade) || quantidade.length == 0){ 
+
+            quantidade = prompt("Por favor, insira um valor numérico para a quantidade de ingredientes:");
+
+                if (!isNaN(quantidade) === false || quantidade.length == 0){
+
+                    while (!isNaN(quantidade) === false || quantidade.length == 0){
+                        quantidade = prompt("Por favor, insira um valor numérico para a quantidade de ingredientes:");
+                    }
+                }
+
+                } 
+
+
+
+    var contador = 1;
+
+    while( contador <= quantidade) {
+
+        var ingrediente = prompt("Informe o ingrediente " + contador);
+        var found = false;
+
+            for (posicao = 0 ; posicao < ingredientes.length ; posicao++){
+                if (ingredientes[posicao] == ingrediente){
+                    found = true;
+                    break;
+                }
+            }
+
+        if (found == false){
+            ingredientes.push(ingrediente);
+            contador++;
+        }
+
+    }
+
+    var receita = document.querySelector('div');
+
+    for (c = 0 ; c < ingredientes.length ; c++){
+        document.write(`<big>• ${ingredientes[c]}</big><br><br>`);
+    }
+
+
+
+
+
+</script>
