@@ -1,58 +1,39 @@
 <meta charset="UTF-8">
+
 <script>
 
     function pulaLinha() {
+
         document.write("<br>");
-    }
+        document.write("<br>");
+}
 
     function mostra(frase) {
+
         document.write(frase);
         pulaLinha();
-    }
+}
 
-// Criar função 'sorteia' onde seu valor (n) será definido baixo
-// O valor gerado será multiplicado pelo valor de (n)
+var numeroPensado = Math.round(Math.random() * 10);
 
-    function sorteia (n) {
-        var numeroSorteado = Math.round(Math.random() * n);
-        return numeroSorteado
-    }
+var tentativas = 1;
 
-// Inserindo nome + valor da função sorteia 
+while(tentativas <= 3) {
 
-    var nome = prompt("SEJA BEM VINDO AO JOGO! Informe o seu nome ");
-
-// Definindo valor de (n). Se (n) for 10 após a multiplicação o valor do número gerado irá variar de 0 a 10;
-// Definindo valor de (n). Se (n) for 100 após a multiplicação o valor do número gerado irá variar de 0 a 100;
-
-    var numeroPensado = sorteia(10);
-
-// Insira um número e tente acertar o valor gerado pelo sistema
-
-    var chute = parseInt(prompt("Olá, " + nome + "! O sistema irá gerar um número aleatório de 0 a 10. Vamos ver se você acerta. Qual o número que o sitema gerou?"));
-
-
-// Verificação do chute
+    var chute = parseInt(prompt("Digite seu chute!"));
 
     if(chute == numeroPensado) {
 
-        mostra("PARABÉNS VOCÊ ACERTOU!!! O número gerado pelo sistema foi o " + numeroPensado + ".");
+        mostra("Você ACERTOU, o número pensado era " + numeroPensado);
+        break;
 
     } else {
 
-        if (chute < numeroPensado) {
-            mostra(" ERROU. O seu número " + chute + " foi menor que o número gerado.");
-
-        } if (chute > numeroPensado) {
-            mostra("ERROU. O seu número " + chute + " foi maior que o número gerado.");
-        }
-
+        mostra("Você ERROU!");
     }
 
-// Não mostrar número pensado caso você acerte o chute
+    tentativas++;
+}
 
-    if (chute != numeroPensado) {         
-        mostra("O número gerado pelo sistema foi o " + numeroPensado);
-    }
-
+mostra("FIM");
 </script>
